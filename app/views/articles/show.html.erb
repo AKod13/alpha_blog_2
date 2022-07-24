@@ -6,18 +6,21 @@
         <div class="card-header font-italic">
           by <%= @article.user.username if @article.user %>
           <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
-        </div>
-        <div class="card-body">
-          <div class="card-text text-left "><%= simple_format(@article.description) %></div>
-          <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
-            <a><%= link_to "Edit", edit_article_path(@article), class: "btn btn btn-outline-info" %></a>
-            <a><%= link_to "Delete", article_path(@article), method: :delete, class: "btn btn btn-outline-danger" %></a>
-          <% end %>
-        </div>
-        <div class="card-footer text-muted">
-          <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+          <% if @article.categories.any? %>
+            <div class="mt-2"><%= render @article.categories %>
+            <% end %>
+          </div>
+          <div class="card-body">
+            <div class="card-text text-left "><%= simple_format(@article.description) %></div>
+            <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
+              <a><%= link_to "Edit", edit_article_path(@article), class: "btn btn btn-outline-info" %></a>
+              <a><%= link_to "Delete", article_path(@article), method: :delete, class: "btn btn btn-outline-danger" %></a>
+            <% end %>
+          </div>
+          <div class="card-footer text-muted">
+            <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
