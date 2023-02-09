@@ -1,26 +1,9 @@
-# README
+Application done as exercise through course on udemy.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is most complete and biggest project/exercise I have worked on for now. I  was guided by videos of the course and it was lots of fun going through it and learning.
 
-Things you may want to cover:
+It is a blog page that alows users to make their accounts, white their blog articles and add them categories. They can also view other users profiles and articles.
 
-* Ruby version
+There is also option for user to be administrator and have ability to edit or delete other users articles.
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# alpha_blog_2
-# alpha_blog_2
